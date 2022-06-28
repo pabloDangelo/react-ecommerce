@@ -1,0 +1,16 @@
+.nav-bar {
+    width: 100vw;
+    height: 20vh;
+    background-color: aquamarine;
+}
+
+.nav-bar li {
+    display: inline;
+    padding-left:3px;
+	padding-right:3px;
+    list-style-type: none;
+    padding: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
