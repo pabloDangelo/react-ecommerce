@@ -1,9 +1,9 @@
-.item-count {
-    display: inline-block;
-    width: 10vw;
-    height: 20vh;
-    background-color: lightseagreen;
+.ItemCount {
+    margin-top: 30px;
+}
+
+.ItemCount button {
+    padding: 10px;
+    margin: 5px;
     border-radius: 10px;
-    margin: 50px;
-    padding: 15px;
 }

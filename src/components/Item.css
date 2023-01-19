@@ -1,0 +1,10 @@
+.Item {
+    width: 200px;
+    height: fit-content;
+    background-color: aquamarine;
+    padding: 5px;
+
+    font-size: 14px;
+    border-radius: 10%;
+    
+}

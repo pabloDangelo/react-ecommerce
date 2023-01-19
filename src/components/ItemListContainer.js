@@ -1,14 +1,28 @@
-import './ItemListContainer.css';
+import React, { useState, useEffect } from 'react';
+import ItemList from './ItemList';
 
-function ItemListContainer(props) {
+const ItemListContainer = ({greeting}) => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        // Este efecto se ejecutará solo una vez después de que el componente se haya montado.
+
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => setProducts(data))
+            .catch(error => {
+                console.error(error);
+            })
+    }, []); 
 
     return(
-       <ul className='item-list-conatiner'>
-        <li>{props.greeting}</li>
-        {props.items.map(item => <li className='item'>{ item }</li>)}
-       </ul> 
-    );
-
+        <div>
+            {greeting}
+            <ItemList products={products}/>
+        </div>
+    )
+    
 }
 
 export default ItemListContainer;

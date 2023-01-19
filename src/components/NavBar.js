@@ -1,16 +1,21 @@
+import React from 'react';
 import './NavBar.css';
-import CartWidget from "./CartWidget";
+import CartWidget from './CartWidget.js';
 
-function NavBar(props) {
-    
-    let listItems = props.items.map(item => <li>{ item }</li>);
-
-    return (
-        <ul className='nav-bar'>
+const NavBar = () => {
+  return (
+    <nav className="NavBar">
+        <ul>
+            <li><span class="material-icons" style={{'font-size':50,}}>redeem</span></li>
+            <li><a href="#">Remeras</a></li>
+            <li><a href="#">Tazas, Vasos y Chops</a></li>
+            <li><a href="#">Calcomanias</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">FAQ</a></li>
             <li><CartWidget /></li>
-            { listItems }
         </ul>
-    );
+    </nav>
+  )
 }
 
-export default NavBar;
+export default NavBar

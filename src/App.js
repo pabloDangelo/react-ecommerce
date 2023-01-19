@@ -1,38 +1,30 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
+// import ClassComponent from './Components/ClassComponent';
+// import FunctionComponent from './Components/FunctionComponent';
+import NavBar from './Components/NavBar';
+import ItemListContainer from './Components/ItemListContainer';
+import './App.css'
+
 function App() {
 
-  let itemsNavBar = ['Inicio', 'Contacto', 'Quienes somos'];
-  let itemsListContainer = ['Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item']; // Por el momento vacio
-
+  // const nombreComponenteDeClase = 'Clase'; 
+  //const nombreComponenteDeFuncion = 'Funcion';
 
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-
     <div className="App">
-      <NavBar items={itemsNavBar}/>
-      <ItemListContainer greeting={'Bienvenido'} items={itemsListContainer} />
-
-      <ItemCount stock={0} initial={0}/>
+      <header className="App-header">
+        <NavBar/>
+        <ItemListContainer greeting={'Productos'}/>
+      </header>
+      <main>
+        
+      </main>
+      <footer>
+        
+      </footer>
+         {/* Componenetes de Ejemplo
+        <ClassComponent nombre='Clase'/> 
+        <FunctionComponent nombre={nombreComponenteDeFuncion}/>  */}
     </div>
-    
   );
 }
 

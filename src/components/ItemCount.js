@@ -1,24 +1,41 @@
+import React, { useState } from 'react';
+import './ItemCount.css'
 
-import './ItemCount.css';
-import InputNumber from './InputNumber';
-import Button from './Button';
-import { useState } from 'react';
+export const ItemCount = ({stock}) => {
+    const [count, setCount] = useState(stock);
 
-function ItemCount(props){
-
-    const [stock, setStock] = useState(props.stock);
-
-    const onAdd = (number) => {
-
+    //----------------------------------------
+    // Handlers
+    //----------------------------------------
+    const incrementHandler = () => {
+        setCount(count + 1);
     }
 
-    return(
-        <div className='item-count'>
-            <InputNumber initial={props.initial} max={props.stock} />
-            <Button onClick={onAdd} className={'count-button'} name='Agregar al carrito' />
-        </div>
-    );
+    const decrementHandler = () => {
+        if(count === 0)
+            return;
+        setCount(count - 1);
+    }
 
+    const onAddHandler = () => {
+        if(stock === 0) {
+            console.log(`No hay stock`);
+
+            return;
+        }
+        console.log(`Selecciono ${count} items`);
+    }
+    //----------------------------------------
+
+  return (
+    <div className='ItemCount'>
+        <button onClick={decrementHandler}>-</button>
+        <span>{count}</span>
+        <button onClick={incrementHandler}>+</button>
+
+        <button onClick={onAddHandler}>Agregar al carrito</button>
+    </div>
+  )
 }
 
 export default ItemCount;
